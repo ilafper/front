@@ -1,9 +1,8 @@
 $(document).ready(function () {
-
   // Mostrar todos los usuarios
   $(".usersall").click(() => {
     $.ajax({
-      url: "back-vercel.vercel.app/api/users", 
+      url: "http://www.back-vercel.vercel.app/api/users", 
       type: "GET",
       success: function (result) {
         $(".contenido").empty();
@@ -51,7 +50,7 @@ $(document).ready(function () {
     }
     // Crear el nuevo usuario a través de una petición POST
     $.ajax({
-      url: "back-vercel.vercel.app/api/nuevo", // Tu endpoint para crear usuario
+      url: "http://www.back-vercel.vercel.app/api/nuevo", // Tu endpoint para crear usuario
       type: "POST",
       data: JSON.stringify({
         nombre: nombre,
@@ -85,7 +84,7 @@ $(document).ready(function () {
 
     // Llamar al endpoint de búsqueda
     $.ajax({
-      url: `back-vercel.vercel.app/api/buscar?q=${encodeURIComponent(searchTerm)}`,
+      url: `"http://www.back-vercel.vercel.app/api/buscar?q=${encodeURIComponent(searchTerm)}`,
       type: "GET",
       success: function (result) {
         $(".contenido").empty(); // Limpiar resultados anteriores
