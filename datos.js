@@ -2,7 +2,7 @@ $(document).ready(function () {
   // Mostrar todos los usuarios
   $(".usersall").click(() => {
     $.ajax({
-      url: "https://back-vercel.vercel.app/api/users", 
+      url: 'https://back-vercel.vercel.app/api/users', 
       type: "GET",
       crossDomain:true,
       success: function (result) {
