@@ -4,6 +4,7 @@ $(document).ready(function () {
     $.ajax({
       url: "https://back-vercel.vercel.app/api/users", 
       type: "GET",
+      crossDomain:true,
       success: function (result) {
         $(".contenido").empty();
         for (let usuario of result) {
@@ -52,6 +53,7 @@ $(document).ready(function () {
     $.ajax({
       url: "https://back-vercel.vercel.app/api/nuevo", // Tu endpoint para crear usuario
       type: "POST",
+      crossDomain:true,
       data: JSON.stringify({
         nombre: nombre,
         ap1: ap1,
@@ -86,6 +88,7 @@ $(document).ready(function () {
     $.ajax({
       url: `"https://back-vercel.vercel.app/api/buscar?q=${encodeURIComponent(searchTerm)}`,
       type: "GET",
+      crossDomain:true,
       success: function (result) {
         $(".contenido").empty(); // Limpiar resultados anteriores
         if (result.length === 0) {
