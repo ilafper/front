@@ -51,7 +51,7 @@ $(document).ready(function () {
     }
     // Crear el nuevo usuario a través de una petición POST
     $.ajax({
-      url: "https://back-vercel.vercel.app/api/nuevo", // Tu endpoint para crear usuario
+      url: 'https://back-vercel.vercel.app/api/nuevo', // Tu endpoint para crear usuario
       type: "POST",
       crossDomain:true,
       data: JSON.stringify({
@@ -86,7 +86,7 @@ $(document).ready(function () {
 
     // Llamar al endpoint de búsqueda
     $.ajax({
-      url: `"https://back-vercel.vercel.app/api/buscar?q=${encodeURIComponent(searchTerm)}`,
+      url: 'https://back-vercel.vercel.app/api/buscar?q=${encodeURIComponent(searchTerm)}',
       type: "GET",
       crossDomain:true,
       success: function (result) {
