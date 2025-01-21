@@ -2,10 +2,11 @@ $(document).ready(function () {
   // Mostrar todos los usuarios
   $(".usersall").click(() => {
     $.ajax({
-      url: 'https://back-vercel.vercel.app/api/users', 
+      url: "https://back-vercel.vercel.app/api/users",
       type: "GET",
-      crossDomain:true,
+      crossDomain: true,
       success: function (result) {
+        console.log("Respuesta del servidor:", result); // Agregar log para revisar la respuesta
         $(".contenido").empty();
         for (let usuario of result) {
           $(".contenido").append(`
@@ -23,10 +24,11 @@ $(document).ready(function () {
         }
       },
       error: function (xhr, status, error) {
-        console.error("Error:", status, error);
+        console.error("Error en la solicitud:", error);
+        console.log("Detalles del error:", xhr);  // Ver más detalles del error
         $(".contenido").empty();
         $(".contenido").append("<p>Hubo un error al obtener los datos.</p>");
-      },
+      }
     });
   });
 
