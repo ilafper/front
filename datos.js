@@ -88,7 +88,7 @@ $(document).ready(function () {
 
     // Llamar al endpoint de búsqueda
     $.ajax({
-      url: 'https://back-vercel.vercel.app/api/buscar?q=${encodeURIComponent(searchTerm)}',
+      url: `https://back-vercel.vercel.app/api/${searchTerm}`,
       type: "GET",
       crossDomain:true,
       success: function (result) {
